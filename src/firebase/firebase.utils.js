@@ -5,7 +5,8 @@ import "firebase/auth";
 const config = {
   apiKey: "AIzaSyBhDX_4Pxpz3qZIII_YtlJU-WLoUY7snyI",
   authDomain: "crown-db-75876.firebaseapp.com",
-  databaseURL: "https://cors-anywhere.herokuapp.com/https://crown-db-75876.firebaseio.com",
+  databaseURL:
+    "https://cors-anywhere.herokuapp.com/https://crown-db-75876.firebaseio.com",
   projectId: "crown-db-75876",
   storageBucket: "crown-db-75876.appspot.com",
   messagingSenderId: "440294978215",
@@ -18,8 +19,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
+  console.log(userRef);
 
   const snapShot = await userRef.get();
+  console.log(snapShot);
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
