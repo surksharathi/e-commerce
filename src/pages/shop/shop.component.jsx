@@ -9,5 +9,5 @@ const ShopPage = ({ match }) => (
     <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
   </div>
 );
-
+// testing
 export default ShopPage;
